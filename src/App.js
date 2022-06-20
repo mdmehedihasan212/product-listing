@@ -1,9 +1,9 @@
-import './App.css';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   return (
     <div>
-      <h1 className='text-2xl text-red-500'>Product Listing</h1>
+      <Dashboard></Dashboard>
     </div>
   );
 }
