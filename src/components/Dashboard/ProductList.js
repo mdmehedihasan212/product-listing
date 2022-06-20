@@ -1,27 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ProductListRow from './ProductListRow';
 
 const ProductList = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://fec-inventory-api.herokuapp.com/product-info')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+
     return (
-        <div>
-            <h1 className='text-3xl'>Dashboard</h1>
-            <input className='border-solid border-2 border-gray-400 rounded-md p-1 my-4' type="text" placeholder='Search item' />
-            <select className='border-solid border-2 border-gray-400 mx-4' name="" id="">
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-            </select>
-            <select className='border-solid border-2 border-gray-400' name="" id="">
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-                <option>5</option>
-            </select>
-            <h1>ProductList</h1>
+        <div className='grid grid-cols-2 gap-4'>
+            {
+                products.map(product => <ProductListRow
+                    key={product.id}
+                    product={product}
+                ></ProductListRow>)
+            }
         </div>
     );
 };
