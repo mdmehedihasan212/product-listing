@@ -5,4 +5,5 @@
 .dashboard {
     display: grid;
     grid-template-columns: 3fr 2fr;
+    margin-top: 20px;
 }

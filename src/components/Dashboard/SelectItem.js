@@ -2,8 +2,7 @@ import React from 'react';
 
 const SelectItem = () => {
     return (
-        <div>
-            <h1 className='top-12'>SelectItem</h1>
+        <div className='ml-8 bg-gray-200 rounded-md'>
         </div>
     );
 };

@@ -11,7 +11,7 @@ const ProductList = () => {
     }, [])
 
     return (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-2 gap-4 scroll-auto'>
             {
                 products.map(product => <ProductListRow
                     key={product.id}
